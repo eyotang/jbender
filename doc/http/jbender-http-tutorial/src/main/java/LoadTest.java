@@ -44,7 +44,9 @@ public class LoadTest {
       new Fiber<Void>("req-gen", () -> {
         // Bench handling 1k reqs
         for (int i = 0; i < 1000; ++i) {
-          requestCh.send(new HttpGet("http://localhost:8080/hello-world"));
+          //requestCh.send(new HttpGet("http://localhost:8080/hello-world"));
+          requestCh.send(new HttpGet("http://www.apache.org"));
+          //requestCh.send(new HttpGet("http://www.baidu.com"));
         }
 
         requestCh.close();
